@@ -1,3 +1,4 @@
+require 'erector'
 module Formbuilder
   module Views
     class Form < Erector::Widget
