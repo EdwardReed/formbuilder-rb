@@ -32,6 +32,9 @@ If you have a few moments, consider reading the source, especially the Rails app
 2. `rake db:migrate`
 
 #### 3) The `Entry` model gets mixed in to an existing model in your application
+
+*Note: you will need to have either the `responses` attribute or the `responses_text` attribute on your Entry model.*
+
 ```ruby
 #  responses       :hstore
 #  responses_text  :text
