@@ -6,7 +6,7 @@ source "https://rubygems.org"
 gemspec
 
 # Explicitly require gems
-gem 'carrierwave', require: 'carrierwave'
+gem 'paperclip', require: 'paperclip'
 gem 'database_cleaner', require: 'database_cleaner'
 gem 'erector-rails4', require: 'erector'
 gem 'geocoder', require: 'geocoder'
