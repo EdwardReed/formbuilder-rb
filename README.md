@@ -19,7 +19,7 @@ If you have a few moments, consider reading the source, especially the Rails app
 
 **Postgres is currently required.** See [Issue #1](https://github.com/dobtco/formbuilder-rb/issues/1).
 
-[Carrierwave](https://github.com/carrierwaveuploader/carrierwave) and [Rmagick](https://github.com/rmagick/rmagick) for file uploads.
+[Paperclip](https://github.com/thoughtbot/paperclip) for file uploads.
 [Geocoder](https://github.com/alexreisner/geocoder) to geocode address fields.
 
 
