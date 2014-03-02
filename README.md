@@ -1,4 +1,4 @@
-#### Alert: This gem is used internally at [DOBT](https://github.com/dobtco), and might not be perfect for your implementation. We recommend forking this repository and using it as a starting opint.
+#### Alert: This gem is used internally at [DOBT](https://github.com/dobtco), and might not be perfect for your implementation. We recommend forking this repository and using it as a starting point.
 
 Formbuilder.rb [![circle ci status](https://circleci.com/gh/dobtco/formbuilder-rb.png?circle-token=a769ad2fc81271bc1869b5e5a95053efa36b376f)](https://circleci.com/gh/dobtco/formbuilder-rb) <a href='https://coveralls.io/r/dobtco/formbuilder-rb'><img src='https://coveralls.io/repos/dobtco/formbuilder-rb/badge.png' alt='Coverage Status' /></a>
 ========
@@ -19,7 +19,7 @@ If you have a few moments, consider reading the source, especially the Rails app
 
 **Postgres is currently required.** See [Issue #1](https://github.com/dobtco/formbuilder-rb/issues/1).
 
-[Carrierwave](https://github.com/carrierwaveuploader/carrierwave) and [Rmagick](https://github.com/rmagick/rmagick) for file uploads.
+[Paperclip](https://github.com/thoughtbot/paperclip) for file uploads.
 [Geocoder](https://github.com/alexreisner/geocoder) to geocode address fields.
 
 
@@ -32,6 +32,9 @@ If you have a few moments, consider reading the source, especially the Rails app
 2. `rake db:migrate`
 
 #### 3) The `Entry` model gets mixed in to an existing model in your application
+
+*Note: you will need to have either the `responses` attribute or the `responses_text` attribute on your Entry model.*
+
 ```ruby
 #  responses       :hstore
 #  responses_text  :text
