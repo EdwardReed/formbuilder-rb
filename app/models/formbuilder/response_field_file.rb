@@ -23,7 +23,7 @@ module Formbuilder
         <span class='existing-filename'>#{get_attachments(value).first.try(:upload).try(:url)}</span>
         <input type='file' name='response_fields[#{self[:id]}][]' id='response_fields_#{self[:id]}' />
       """
-      if ["image/jpg", "image/gif", "image/png"].include?(get_attachments(value).first.try(:upload_content_type))
+      if ["image/jpg", "image/jpeg", "image/gif", "image/png"].include?(get_attachments(value).first.try(:upload_content_type))
         str += """
           <img src='#{get_attachments(value).first.try(:upload).try(:url)}' /><br />
         """
@@ -39,7 +39,7 @@ module Formbuilder
           str << """
             <a href='#{attachment.upload.url}' target='_blank'>
           """
-          if ["image/jpg", "image/gif", "image/png"].include?(attachment.upload_content_type)
+          if ["image/jpg", "image/jpeg", "image/gif", "image/png"].include?(attachment.upload_content_type)
             str << """
               <img src='#{attachment.upload.url}' /><br />
             """
