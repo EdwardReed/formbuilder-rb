@@ -1,3 +1,4 @@
+require 'paperclip'
 module Formbuilder
   class EntryAttachment < ActiveRecord::Base
 
