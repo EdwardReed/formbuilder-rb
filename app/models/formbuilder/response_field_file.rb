@@ -19,10 +19,16 @@ module Formbuilder
     end
 
     def render_input(value, opts = {})
-      """
+      str = """
         <span class='existing-filename'>#{get_attachments(value).first.try(:upload).try(:url)}</span>
         <input type='file' name='response_fields[#{self[:id]}][]' id='response_fields_#{self[:id]}' />
       """
+      if ["image/jpg", "image/gif", "image/png"].include?(attachment.upload_content_type)
+        str += """
+          <img src='#{attachment.upload.url}' /><br />
+        """
+      end
+      str
     end
 
     def render_entry(value, opts = {})
@@ -32,7 +38,13 @@ module Formbuilder
         String.new.tap do |str|
           str << """
             <a href='#{attachment.upload.url}' target='_blank'>
-            <img src='#{attachment.upload.url}' /><br />
+          """
+          if ["image/jpg", "image/gif", "image/png"].include?(attachment.upload_content_type)
+            str << """
+              <img src='#{attachment.upload.url}' /><br />
+            """
+          end
+          str << """
               #{attachment.upload_file_name.try(:gsub, /\?.*$/, '')}
             </a>
           """
