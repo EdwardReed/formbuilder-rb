@@ -100,8 +100,6 @@ module Formbuilder
       value = response_field.transform_raw_value(raw_value, self, response_field_params: response_field_params)
 
       if value.present?
-        puts "#{response_field.id}"
-        puts get_responses["#{response_field.id}"]
         get_responses["#{response_field.id}"] = response_field.serialized ? value.to_yaml : value
         get_responses["#{response_field.id}_sortable_value"] = response_field.sortable_value(value)
       end
