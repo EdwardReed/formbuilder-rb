@@ -25,7 +25,7 @@ module Formbuilder
       """
       if ["image/jpg", "image/gif", "image/png"].include?(get_attachments(value).first.try(:upload_content_type))
         str += """
-          <img src='#{attachment.upload.url}' /><br />
+          <img src='#{get_attachments(value).first.try(:upload).try(:url)}' /><br />
         """
       end
       str
