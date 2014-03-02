@@ -33,10 +33,6 @@ module Formbuilder
           str << """
             <a href='#{attachment.upload.url}' target='_blank'>
             <img src='#{attachment.upload.url}' /><br />
-            """
-          end
-
-          str << """
               #{attachment.upload_file_name.try(:gsub, /\?.*$/, '')}
             </a>
           """
