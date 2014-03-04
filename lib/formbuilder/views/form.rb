@@ -7,12 +7,14 @@ module Formbuilder
             :entry,
             current_page: 1,
             action: '',
-            method: 'POST'
+            method: 'POST',
+            extradata: {}
 
       def content
         page_list if @form.multi_page?
 
         form_tag @action, method: @method, class: 'formbuilder-form', multipart: true do
+          render_hidden_data
           input type: 'hidden', name: 'page', value: @current_page
           render_fields
           actions
@@ -58,6 +60,11 @@ module Formbuilder
       def render_fields
         @form.response_fields_for_page(@current_page).each do |response_field|
           widget Formbuilder::Views::FormField.new(response_field: response_field, entry: @entry)
+        end
+      end
+      def render_hidden_data
+        @extradata.each do |k,v|
+          input type: 'hidden', name: k, value: v
         end
       end
 

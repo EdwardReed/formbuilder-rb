@@ -1,3 +1,4 @@
+require 'rinku'
 module Formbuilder
   class ResponseFieldParagraph < ResponseField
 

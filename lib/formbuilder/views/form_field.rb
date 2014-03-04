@@ -6,8 +6,11 @@ module Formbuilder
 
       def content
         @value = @entry.try(:response_value, @response_field)
-
-        div(class: "fb-field-wrapper response-field-#{@response_field.field_type} #{@entry.try(:error_for, @response_field) && 'error'}") {
+        puts @entry.inspect
+        puts @value
+        puts @response_field.inspect
+        puts @entry.error_for(@response_field).inspect
+        div(class: "field-wrapper fb-field-wrapper response-field-#{@response_field.field_type} #{@entry.try(:error_for, @response_field) && 'error'}") {
           render_label if @response_field.input_field
           rawtext @response_field.render_input(@value, entry: @entry)
           div.clear

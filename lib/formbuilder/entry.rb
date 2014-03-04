@@ -115,6 +115,9 @@ module Formbuilder
     end
 
     def error_for(response_field)
+      puts self.inspect
+      puts self.errors.inspect
+      puts self.errors.messages.inspect
       Array(self.errors.messages[:"#{responses_column}_#{response_field.id}"]).first
     end
 
