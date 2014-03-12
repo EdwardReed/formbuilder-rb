@@ -13,7 +13,7 @@ module Formbuilder
       """
 
       if self[:field_options]['description'].present?
-        str += """<p>#{self[:field_options]['description']}</p>"""
+        str += """#{self[:field_options]['description']}"""
       end
 
       str += """
