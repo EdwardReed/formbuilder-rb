@@ -9,6 +9,11 @@ module Formbuilder
             action: '',
             method: 'POST',
             extradata: {}
+      
+      def initialize
+        @form = form unless form.nil?
+        @entry = entry unless entry.nil?
+      end
 
       def content
         page_list if @form.multi_page?
