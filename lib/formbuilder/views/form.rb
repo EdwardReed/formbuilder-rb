@@ -11,7 +11,7 @@ module Formbuilder
             extradata: {}
       
       def content
-        page_list if @form.multi_page?
+#        page_list if @form.multi_page?
 
         form_tag @action, method: @method, class: 'formbuilder-form', multipart: true do
           render_hidden_data
